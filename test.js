@@ -1,4 +1,8 @@
-let fs = require('fs')
+let http = require('http')
 
-let data = fs.readFileSync('./test1.txt') //同步的,不需要回调
-console.log(data.toString())
+let server = http.createServer(function (req,res){
+    console.log(req.url)
+    
+})
+server.listen(9999)
+console.log('9999')
