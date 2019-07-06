@@ -1,7 +1,4 @@
 let fs = require('fs')
 
-fs.readFile('./test1.txt',(err,data)=>{
-
-    console.log(err)
-    console.log(data.toString())
-})
+let data = fs.readFileSync('./test1.txt') //同步的,不需要回调
+console.log(data.toString())
