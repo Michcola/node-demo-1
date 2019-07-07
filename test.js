@@ -10,4 +10,7 @@ app.get('/',(req,res)=>{
 app.get('/frank',(req,res)=>{
     res.send('hi')
 })
+
+app.use('/static',express.static(path.join(__dirname, 'public')))
+
 app.listen(9999,()=> console.log('express 9999'))
