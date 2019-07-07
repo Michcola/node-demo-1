@@ -1,10 +1,13 @@
-let http = require('http')
+const express = require('express')
+const app = express()
+const path = require('path')
 
-let server = http.createServer(function (req,res){
-    console.log(req.url)
-    res.statusCode = 201
-    res.write('hello')
-    res.end()
+app.get('/',(req,res)=>{
+    let p = path.join(__dirname, './index.html')
+    res.sendFile(p)
 })
-server.listen(9999)
-console.log('9999')
+
+app.get('/frank',(req,res)=>{
+    res.send('hi')
+})
+app.listen(9999,()=> console.log('express 9999'))
